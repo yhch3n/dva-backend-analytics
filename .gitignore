@@ -1,0 +1,12 @@
+### Python ###
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# pyenv
+.python-version
+
+### OS ###
+
+# MacOS General
+.DS_Store
