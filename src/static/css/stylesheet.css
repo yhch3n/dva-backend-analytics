@@ -1,0 +1,90 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+.state {
+/*   fill: #f7f7f7; */
+  fill: #bdbdbd;
+  /* #f7f7f7 */
+  stroke: white;
+  cursor: pointer;
+}
+
+.mesh {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.legend {
+  font-size: 14px;
+}
+
+.state-names {
+  fill: #484848;
+  font-size:10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.legend-axis {
+  color: #484848;
+  font-size: 11px;
+}
+
+#legend {
+  display: inline-block;
+}
+
+.break-line {
+  overflow-wrap: break-word;
+}
+
+#main-title {
+  height: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 15px;
+  text-align: center;
+}
+
+#back {
+  position: absolute;
+  right: 50px;
+  display: none;
+}
+
+#selected-state {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+#selected-time {
+  margin-left: 20px;
+}
+
+#selected-time, #value-range {
+  display:inline;
+  font-style: italic;
+}
+
+.button {
+  background-color: #4eb5f1;
+  border: 2px solid #4eb5f1;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: white;
+  color: #4eb5f1;
+  border: 2px solid #4eb5f1;
+}

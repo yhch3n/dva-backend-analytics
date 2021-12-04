@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, BigInteger
+from sqlalchemy import Column, String, BigInteger, Integer
 from db.database import Base
 from dataclasses import dataclass
 from datetime import datetime
@@ -44,3 +44,31 @@ class Tweet(Base):
         self.place = place
         self.text = text
         self.time = time
+
+@dataclass
+class Feedback(Base):
+    __tablename__ = 'feedback'
+
+    id: int
+    sentiment: int
+    policy: int
+    easy: int
+    innovative: int
+    informative: int
+    vizualise: int
+
+    id = Column(BigInteger, primary_key = True, autoincrement=True)
+    sentiment = Column(Integer)
+    policy = Column(Integer)
+    easy = Column(Integer)
+    innovative = Column(Integer)
+    informative = Column(Integer)
+    vizualise = Column(Integer)
+
+    def __init__(self, sentiment, policy, easy, innovative, informative, vizualise):
+        self.sentiment = sentiment
+        self.policy = policy
+        self.easy = easy
+        self.innovative = innovative
+        self.informative = informative
+        self.vizualise = vizualise

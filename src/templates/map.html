@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <!-- add title -->
+    
+    <!-- import required libraries here -->
+    <script src="../static/js/libs/d3.v5.min.js"></script>
+    <script src="../static/js/libs/d3-legend.min.js"></script>
+    <script src="../static/js/libs/d3-tip.min.js"></script>
+    <script src="../static/js/libs/d3-simple-slider.min.js"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script> 
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css"></link>
+    <script type="text/javascript" src="../static/js/libs/d3-color-legend.js"></script>
+    <script type="text/javascript" src="../static/js/map.js"></script>
+    
+
+    <title></title>
+</head>
+
+
+<body>
+    <div>
+    <div id='main-title'>State Sentiments towards Covid-19 Policies</div>
+        <button id='back' type="button" class="btn btn-light" onclick="reset()">Back</button>
+    </div>
+    <svg id="map"></svg>
+    <svg id="legend"></svg>
+      <div class="row align-items-center"></div>
+      <div>
+        <div id='selected-time'>Time: </div>
+        <div id="value-range"></div>
+    </div>
+    <div class="col-sm"><div id="slider-range"></div></div>
+  </div>
+  <script type="text/javascript" src = "../static/js/slider.js"></script>
+    <!-- append survey dialog -->
+    <dialog id="surveyDialog">
+      <form method="POST" action="./" id="survey-form">
+  
+        <p><label>The sentiment analysis fits your personal experience.
+          <select name="sentiment" id="sentiment">
+            <option>Strongly agree</option>
+            <option>Somewhat agree</option>
+            <option>Neutral</option>
+            <option>Somewhat disagree</option>
+            <option>Strongly disagree</option>
+          </select>
+        </label></p>
+        <p><label>This tool helps you understand how a policy affects the Covid cases and people's feelings.
+          <select name="policy" id="policy">
+            <option>Strongly agree</option>
+            <option>Somewhat agree</option>
+            <option>Neutral</option>
+            <option>Somewhat disagree</option>
+            <option>Strongly disagree</option>
+          </select>
+        </label></p>
+        <p><label>This tool is easy to interact with.
+          <select name="easy" id="easy">
+            <option>Strongly agree</option>
+            <option>Somewhat agree</option>
+            <option>Neutral</option>
+            <option>Somewhat disagree</option>
+            <option>Strongly disagree</option>
+          </select>
+        </label></p>
+        <p><label>From 1 to 5 how innovative is this tool? (5: Excellent, 1: Extremely poor)
+          <select name="innovative" id="innovative">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </label></p>
+        <p><label>From 1 to 5 how informative is this tool? (5: Excellent, 1: Extremely poor)
+          <select name="informative" id="informative">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </label></p>
+
+        <p><label>How well (from 1 to 5) did this tool help you vizualise the relationshipt between sentiment and policy? (5: Excellent, 1: Extremely poor)
+          <select name="vizualise" id="vizualise">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </label></p>
+        <menu>
+          <button value="cancel" type="reset" id="cancelBtn">Cancel</button>
+          <button class="pure-button button-warning confirm" id="confirmBtn" value="default" type="submit" 
+                      formaction="" formmethod="post">Confirm</button>
+        </menu>
+      </form>
+    </dialog>
+    
+    <menu>
+      <button id="givingFeedback" class="button">Giving feedback</button>
+    </menu>
+    
+    <output aria-live="polite"></output>
+    <script type="text/javascript" src="../static/js/survey_dialog.js"></script>
+  
+  
+</body>
+
+</html>
+
+
